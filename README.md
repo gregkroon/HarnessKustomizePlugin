@@ -22,7 +22,7 @@ Directory with the following path /root/K_PLUGINS/kustomize/plugin/version1/harn
 ![image](https://user-images.githubusercontent.com/44827446/114340816-bdb62880-9b9b-11eb-8a74-d08aff6ff3a0.png)
 
 
-# Harness configuration (Worklflow)
+# Harness configuration (Workflow)
 
 ![image](https://user-images.githubusercontent.com/44827446/114340868-d7577000-9b9b-11eb-93ad-7e115e2932f2.png)
 
@@ -57,5 +57,5 @@ git push --set-upstream origin main > /dev/null 2>&1
 yq eval '(.spec.template.spec.containers[].image = "${artifact.metadata.image}")'  input.yaml
 EOF
 
-#Set plugin scipt permissions 
+#Set plugin script permissions 
 chmod +x HarnessKustomizePlugin
