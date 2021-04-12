@@ -59,7 +59,7 @@ git commit -m "Automated commit"  > /dev/null 2>&1
 git remote set-url origin https://username:password@github.com/user/repo.git > /dev/null 2>&1
 git push --set-upstream origin main > /dev/null 2>&1
 
-#Process input file and transform for plugin stdout 
+#Process input file and transform for plugin stdout (this is where we inject the harness ${artifact.metadata.image} variable
 
 yq eval '(.spec.template.spec.containers[].image = "${artifact.metadata.image}")'  input.yaml
 EOF
