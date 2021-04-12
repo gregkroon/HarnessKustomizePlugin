@@ -1,7 +1,7 @@
 # HarnessKustomizePlugin
 
 Purpose of this plugin is as an example to show how harness can inject variables into Kustomize manifests .
-This particular examples replaces the image in the manifest 
+This particular example replaces the image in the manifest 
 
 # Pre-requsites
 
