@@ -60,3 +60,5 @@ EOF
 #Set plugin script permissions 
 chmod +x HarnessKustomizePlugin
 ```
+
+# Troubleshooting
