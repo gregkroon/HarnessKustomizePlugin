@@ -25,6 +25,7 @@ https://www.bookstack.cn/read/kubernetes-kubectl-en/746cbd49e2286776.md
 - deployment.yaml and service.yaml (example files for kustomization - nginx deploy)
 - kustomization.yaml
 - HarnessKustomizePlugin.yaml
+- HarnessKustomizePluginScript (for addition to your workflow)
 
 # Harness configuration (Delegate)
 
