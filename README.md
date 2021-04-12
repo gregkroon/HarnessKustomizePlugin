@@ -17,8 +17,8 @@ https://www.bookstack.cn/read/kubernetes-kubectl-en/746cbd49e2286776.md
 # Pre-requsites
 
 - Working delegate and kubernetes cluster
-- GIT installed on the delegate 
-- YQ installed on the delegate 
+- GIT installed on the delegate (this can be done by a delegate profile)
+- YQ installed on the delegate (this can be done by a delegate profile)
 
 # Files in this repo 
 
