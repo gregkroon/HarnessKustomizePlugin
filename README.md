@@ -3,8 +3,10 @@
 Purpose of this plugin is as an example to show how harness can inject variables into Kustomize manifests .
 This particular example replaces the image in the manifest .
 
-Ultimaately you could use any available commands and utilities in the plugin framework to achieve the same outcome .For insance you could use go templating 
-I have used YQ to rapid prototype .
+Ultimaately you could use any available commands and utilities in the plugin framework to achieve the same outcome .
+For instance you could use go templating 
+
+I have used YQ and bash in this example to rapid prototype .
 
 Here are some more examples in python from other folks 
 https://github.com/Agilicus/kustomize-plugins/tree/master/agilicus/v1/imagetransformer
