@@ -11,6 +11,9 @@ I have used YQ and bash in this example to rapid prototype .
 Here are some more examples in python from other folks 
 https://github.com/Agilicus/kustomize-plugins/tree/master/agilicus/v1/imagetransformer
 
+And plugin development documentation 
+https://www.bookstack.cn/read/kubernetes-kubectl-en/746cbd49e2286776.md
+
 # Pre-requsites
 
 - Working delegate and kubernetes cluster
