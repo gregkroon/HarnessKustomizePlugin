@@ -11,6 +11,8 @@ This particular examples replaces the image in the manifest
 
 # Harness configuration (Delegate)
 
+Directory with the following path /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin the workflow will create a plugin script here called HarnessKustomizePlugin
+
 
 # Harness configuration (Service)
 
