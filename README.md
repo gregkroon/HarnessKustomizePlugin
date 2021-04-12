@@ -4,4 +4,5 @@ Purpose of this plugin is as an example to show how harness can inject variables
 
 # Files in this repo 
 
+- deployment.yaml and service.yaml (example files for kustomization - nginx deploy)
 - 
