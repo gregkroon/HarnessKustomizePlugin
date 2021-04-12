@@ -5,6 +5,10 @@ This particular examples replaces the image in the manifest
 
 # Pre-requsites
 
+- Working delegate and kubernetes cluster
+- GIT installed on the delegate 
+- YQ installed on the delegate 
+
 # Files in this repo 
 
 - deployment.yaml and service.yaml (example files for kustomization - nginx deploy)
