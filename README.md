@@ -31,6 +31,9 @@ Directory with the following path /root/K_PLUGINS/kustomize/plugin/version1/harn
 ![image](https://user-images.githubusercontent.com/44827446/114340868-d7577000-9b9b-11eb-93ad-7e115e2932f2.png)
 
 
+![Uploading image.png…]()
+
+
 ```
 cd /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin
 rm  HarnessKustomizePlugin
