@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: HARNESS_IMAGE
+          image: HARNESS_IMAGE1
           ports:
             - containerPort: 80
