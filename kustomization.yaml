@@ -3,4 +3,4 @@ commonLabels:
 resources:
 - deployment.yaml
 transformers:
-- cmGenerator.yaml
+- HarnessKustomizePlugin.yaml
