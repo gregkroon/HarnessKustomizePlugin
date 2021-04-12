@@ -1,6 +1,7 @@
 # HarnessKustomizePlugin
 
 Purpose of this plugin is as an example to show how harness can inject variables into Kustomize manifests .
+This particular examples replaces the image in the manifest 
 
 # Files in this repo 
 
@@ -8,3 +9,10 @@ Purpose of this plugin is as an example to show how harness can inject variables
 - kustomization.yaml
 - HarnessKustomizePlugin.yaml
 
+# Harness configuration (Delegate)
+
+
+# Harness configuration (Service)
+
+
+# Harness configuration (Worklfow)
