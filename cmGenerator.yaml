@@ -1,5 +1,5 @@
-apiVersion: myDevOpsTeam
-kind: SillyConfigMapGenerator
+apiVersion: version1
+kind: HarnessKustomizePlugin
 metadata:
   name: nginx-deployment
 images:
