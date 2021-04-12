@@ -1,0 +1,8 @@
+apiVersion: myDevOpsTeam
+kind: SillyConfigMapGenerator
+metadata:
+  name: nginx-deployment
+images:
+  - name: nginx
+    tag: v1
+
