@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: registry.hub.docker.com/library/nginx:mainline-alpine
+          image: registry.hub.docker.com/library/nginx:stable-alpine-perl
           ports:
             - containerPort: 80
