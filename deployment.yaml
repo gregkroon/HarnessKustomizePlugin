@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: registry.hub.docker.com/library/nginx:perl
+          image: registry.hub.docker.com/library/nginx:stable-perl
           ports:
             - containerPort: 80
