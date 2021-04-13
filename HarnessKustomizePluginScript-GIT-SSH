@@ -3,23 +3,14 @@
 
 GIT_USER="joebloggs"
 GIT_EMAIL="joebloggs@hotmail.com"
-
-#note HTTPS url requires URL encoding for special characters 
-GIT_PASSWORD_URLENCODED=${secrets.getValue("git_password_url_encoded")}
-
 GIT_BRANCH="main"
-
 #reference to harness image artifact variable
 IMAGE=${artifact.metadata.image}
-
 #repo URL suffix 
-REPOSITORY_NAME=HarnessKustomizePlugin
+GIT_REPOSITORY_NAME=HarnessKustomizePlugin
+#generic repo path and auth
+GIT_REPO_PATH=git@github.com:$GIT_USER/$GIT_REPOSITORY_NAME.git
 
-#generic repo path
-REPO_PATH=https://github.com/gregkroon/HarnessKustomizePlugin
-
-#build full auth string with URL encoded password for remote repo add and git push 
-REPO_AUTH_STRING=https://$GIT_USER:$GIT_PASSWORD_URLENCODED@github.com/$GIT_USER/$REPOSITORY_NAME.git 
 
 if [[ ! -d "/root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin" ]];then
 mkdir -p /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin
@@ -30,25 +21,40 @@ fi
 cd /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin
 rm  HarnessKustomizePlugin
 
+
+
 #generate plugin script
 cat <<EOF >  HarnessKustomizePlugin
 #!/bin/sh
+
+
 #Setup GIT config 
 git config --global user.email $GIT_EMAIL
 git config --global user.name $GIT_USER
+
 # capture standad input to file for yq processing 
 cat -> input.yaml
+
 #Process input file and transform for plugin stdout , this uses a yq select so as to change only the deployment.yaml not the service.yaml
+
 yq eval '(select(.spec.template.spec.containers[].image) |.spec.template.spec.containers[].image = "$IMAGE")'  input.yaml 
+
+
 # create update for commit to GIT
+
 yq eval '(select(.kind == "Deployment") | del(.metadata.annotations."kustomize.config.k8s.io/id") | .spec.template.spec.containers[].image = "$IMAGE"' input.yaml > deployment.yaml.new
+
 rm deployment.yaml
 mv deployment.yaml.new deployment.yaml
-git pull $REPO_PATH $GIT_BRANCH > /dev/null 2>&1
+
+
+git pull $GIT_REPO_PATH $GIT_BRANCH > /dev/null 2>&1
+
 git add -f deployment.yaml > /dev/null 2>&1
 git commit -m "Harness Automated commit"  > /dev/null 2>&1
-git remote set-url origin $REPO_AUTH_STRING > /dev/null 2>&1
+git remote set-url origin $GIT_REPO_PATH > /dev/null 2>&1
 git push origin HEAD:$GIT_BRANCH > /dev/null 2>&1
+
 EOF
 
 #Set plugin scipt permissions 
