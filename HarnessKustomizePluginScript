@@ -21,9 +21,6 @@ REPO_PATH=https://github.com/gregkroon/HarnessKustomizePlugin
 #build full auth string with URL encoded password for remote repo add and git push 
 REPO_AUTH_STRING=https://$GIT_USER:$GIT_PASSWORD_URLENCODED@github.com/$GIT_USER/$REPOSITORY_NAME.git 
 
-
-
-
 #cleanup old script 
 
 cd /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin
@@ -41,11 +38,17 @@ git config --global user.name $GIT_USER
 # capture standad input to file for yq processing 
 cat -> input.yaml
 
+#Process input file and transform for plugin stdout , this uses a yq select so as to change only the deployment.yaml not the service.yaml
+
+yq eval '(select(.spec.template.spec.containers[].image) |.spec.template.spec.containers[].image = "$IMAGE")'  input.yaml 
+
+
 # create update for commit to GIT
-yq eval '(.spec.template.spec.containers[].image = "$IMAGE")'  deployment.yaml > deployment.yaml.new
+
+yq eval '(select(.kind == "Deployment") | del(.metadata.annotations."kustomize.config.k8s.io/id") | .spec.template.spec.containers[].image = "$IMAGE"' input.yaml > deployment.yaml.new
+
 rm deployment.yaml
 mv deployment.yaml.new deployment.yaml
-
 git pull $REPO_PATH $GIT_BRANCH > /dev/null 2>&1
 
 git add -f deployment.yaml > /dev/null 2>&1
@@ -53,9 +56,6 @@ git commit -m "Harness Automated commit"  > /dev/null 2>&1
 git remote set-url origin $REPO_AUTH_STRING > /dev/null 2>&1
 git push origin HEAD:$GIT_BRANCH > /dev/null 2>&1
 
-#Process input file and transform for plugin stdout , this uses a yq select so as to change only the deployment.yaml not the service.yaml
-
-yq eval '(select(.spec.template.spec.containers[].image) |.spec.template.spec.containers[].image = "$IMAGE")'  input.yaml
 EOF
 
 #Set plugin scipt permissions 
