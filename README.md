@@ -28,6 +28,11 @@ https://www.bookstack.cn/read/kubernetes-kubectl-en/746cbd49e2286776.md
 - HarnessKustomizePluginScript-GIT-HTTPS (HTTPS Plugin script for addition to your workflow)
 - HarnessKustomizePluginScript-GIT-SSH (SSH Plugin script for addition to your workflow)
 
+# GIT SSH and GIT HTTPS pre-requsites
+
+If using GIT ssh , ssh public key should be available and working on the delegate home user (delegate profiles are good for this)
+If using HTTPS 
+
 # Harness configuration (Delegate)
 
 Directory with the following path /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin must exist the workflow will create a plugin script here called HarnessKustomizePlugin
