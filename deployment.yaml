@@ -6,7 +6,7 @@ metadata:
     app: hello
   name: nginx-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: hello
@@ -16,5 +16,5 @@ spec:
         app: hello
     spec:
       containers:
-        - image: registry.hub.docker.com/library/nginx:mainline
+        - image: registry.hub.docker.com/library/nginx:perl
           name: nginx
