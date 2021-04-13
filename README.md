@@ -1,6 +1,6 @@
 # HarnessKustomizePlugin
 
-Purpose of this plugin is as an example to show how harness can inject variables into Kustomize manifests .
+Purpose of this plugin is as an "Example" to show how harness can inject variables into Kustomize manifests .
 This particular example replaces the image in the manifest and makes a commit back to the orginal kustomize GIT versioned deployment manifest.
 
 Ultimately you could use any available commands and utilities in the plugin framework to achieve the same outcome .
