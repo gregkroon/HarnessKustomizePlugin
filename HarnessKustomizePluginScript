@@ -4,7 +4,7 @@
 GIT_USER="joebloggs"
 GIT_EMAIL="joebloggs@hotmail.com"
 
-#note: HTTPS url requires URL encoding for special characters and uses a harness secretwhich you must create 
+#note HTTPS url requires URL encoding for special characters 
 GIT_PASSWORD_URLENCODED=${secrets.getValue("git_password_url_encoded")}
 
 GIT_BRANCH="main"
@@ -53,9 +53,9 @@ git commit -m "Harness Automated commit"  > /dev/null 2>&1
 git remote set-url origin $REPO_AUTH_STRING > /dev/null 2>&1
 git push origin HEAD:$GIT_BRANCH > /dev/null 2>&1
 
-#Process input file and transform for plugin stdout 
+#Process input file and transform for plugin stdout , this uses a yq select so as to change only the deployment.yaml not the service.yaml
 
-yq eval '(.spec.template.spec.containers[].image = "$IMAGE")'  input.yaml
+yq eval '(select(.spec.template.spec.containers[].image) |.spec.template.spec.containers[].image = "$IMAGE")'  input.yaml
 EOF
 
 #Set plugin scipt permissions 
