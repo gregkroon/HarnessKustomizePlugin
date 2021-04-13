@@ -1,22 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
   annotations:
+    kustomize.config.k8s.io/id: |
+      group: apps
+      kind: Deployment
+      name: nginx-deployment
+      version: v1
   labels:
-    app: nginx
+    app: hello
+  name: nginx-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: hello
   template:
     metadata:
       labels:
-        app: nginx
+        app: hello
     spec:
       containers:
-        - name: nginx
-          image: registry.hub.docker.com/library/nginx:stable-alpine
-          ports:
-            - containerPort: 80
+        - image: 7777
+          name: nginx
