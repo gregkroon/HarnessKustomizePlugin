@@ -23,7 +23,7 @@ https://www.bookstack.cn/read/kubernetes-kubectl-en/746cbd49e2286776.md
 # GIT SSH and GIT HTTPS pre-requsites
 
 If using GIT ssh , ssh public key should be available and working on the delegate home user (delegate profiles are good for this)
-If using HTTPS 
+If using HTTPS , you will need your GIT password url encoded and stored in a harness secret called "git_password_url_encoded"
 
 # Files in this repo 
 
