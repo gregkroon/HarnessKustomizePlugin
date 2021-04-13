@@ -21,6 +21,10 @@ REPO_PATH=https://github.com/gregkroon/HarnessKustomizePlugin
 #build full auth string with URL encoded password for remote repo add and git push 
 REPO_AUTH_STRING=https://$GIT_USER:$GIT_PASSWORD_URLENCODED@github.com/$GIT_USER/$REPOSITORY_NAME.git 
 
+if [[ ! -d "/root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin" ]];then
+mkdir -p /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin
+fi
+
 #cleanup old script 
 
 cd /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin
