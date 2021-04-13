@@ -1,3 +1,5 @@
+patchesStrategicMerge:
+- custom-image.yaml
 commonLabels:
   app: hello
 resources:
