@@ -20,6 +20,11 @@ https://www.bookstack.cn/read/kubernetes-kubectl-en/746cbd49e2286776.md
 - GIT installed on the delegate (this can be done by a delegate profile)
 - YQ installed on the delegate (this can be done by a delegate profile)
 
+# GIT SSH and GIT HTTPS pre-requsites
+
+If using GIT ssh , ssh public key should be available and working on the delegate home user (delegate profiles are good for this)
+If using HTTPS 
+
 # Files in this repo 
 
 - deployment.yaml and service.yaml (example files for kustomization - nginx deploy)
@@ -28,10 +33,6 @@ https://www.bookstack.cn/read/kubernetes-kubectl-en/746cbd49e2286776.md
 - HarnessKustomizePluginScript-GIT-HTTPS (HTTPS Plugin script for addition to your workflow)
 - HarnessKustomizePluginScript-GIT-SSH (SSH Plugin script for addition to your workflow)
 
-# GIT SSH and GIT HTTPS pre-requsites
-
-If using GIT ssh , ssh public key should be available and working on the delegate home user (delegate profiles are good for this)
-If using HTTPS 
 
 # Harness configuration (Delegate)
 
