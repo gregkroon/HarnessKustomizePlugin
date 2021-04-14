@@ -14,7 +14,7 @@ https://github.com/Agilicus/kustomize-plugins/tree/master/agilicus/v1/imagetrans
 And plugin development documentation 
 https://www.bookstack.cn/read/kubernetes-kubectl-en/746cbd49e2286776.md
 
-# Pre-requsites
+# General pre-requsites
 
 - Working delegate and kubernetes cluster
 - GIT installed on the delegate (this can be done by a delegate profile)
