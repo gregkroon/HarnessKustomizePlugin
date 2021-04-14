@@ -58,11 +58,20 @@ Directory with the following path /root/K_PLUGINS/kustomize/plugin/version1/harn
 2. Setup your kustomize repo , test and deploy as per documentation 
    https://docs.harness.io/article/zrz7nstjha-use-kustomize-for-kubernetes-deployments
    
-3. Configure the plugin directory as per documentation and delegate path above
+3. Add the plugin config yaml to the root of your kustomize repo HarnessKustomizePlugin.yaml
+
+4. Reference it in your kustomization.yaml (see example in this repo)
+
+transformers:
+- HarnessKustomizePlugin.yaml
+   
+5. Configure the plugin directory as per documentation and delegate path above
    https://docs.harness.io/article/zrz7nstjha-use-kustomize-for-kubernetes-deployments
+     
+6. Add a shell script step in your workflow before the rollout step , name it Inject Harness Plugin , add the contents of HarnessKustomizePluginScript-GIT-HTTPS-AUTH or HarnessKustomizePluginScript-GIT-SSH-AUTH depending on your auth scheme .
 
-4. Add a shell script step in your workflow before the rollout step , name it Inject Harness Plugin , add the contents of HarnessKustomizePluginScript-GIT-HTTPS-AUTH or HarnessKustomizePluginScript-GIT-SSH-AUTH depending on your auth scheme .
+7. If SSH you will require your ssh key added and tested manually to the delegate , if using HTTPS you will need to create a secret with the GIT user password that is url encoded called "git_password_url_encoded"
 
-5. If SSH you will require your ssh key added and tested manually to the delegate , if using HTTPS you will need to create a secret with the GIT user password that is url encoded called "git_password_url_encoded"
+8. Execute the workflow and verify no errors in the "Rollout Deployment step" -> "Intialize logs" and that there is a successfull git commit on the deployment.yaml
 
 # Troubleshooting
