@@ -63,6 +63,6 @@ Directory with the following path /root/K_PLUGINS/kustomize/plugin/version1/harn
 
 4. Add a shell script step in your workflow before the rollout step , name it Inject Harness Plugin , add the contents of HarnessKustomizePluginScript-GIT-HTTPS-AUTH or HarnessKustomizePluginScript-GIT-SSH-AUTH depending on your auth scheme .
 
-5. If SSH you will require your ssh key added and tested manually to the delegate , if using HTTPS you will need to create a secret with the GIT user password called 
+5. If SSH you will require your ssh key added and tested manually to the delegate , if using HTTPS you will need to create a secret with the GIT user password that is url encoded called "git_password_url_encoded"
 
 # Troubleshooting
