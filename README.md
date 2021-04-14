@@ -51,6 +51,16 @@ Directory with the following path /root/K_PLUGINS/kustomize/plugin/version1/harn
 
 ![image](https://user-images.githubusercontent.com/44827446/114344651-8fd4e200-9ba3-11eb-9e52-6125785c223f.png)
 
+# How to implement 
 
+1. Setup and test delegate pre-requsites (SSH key , YQ , GIT)
+
+2. Setup your kustomize repo , test and deploy as per documentation 
+   https://docs.harness.io/article/zrz7nstjha-use-kustomize-for-kubernetes-deployments
+   
+3. Configure the plugin directory as per documentation and delegate path above
+   https://docs.harness.io/article/zrz7nstjha-use-kustomize-for-kubernetes-deployments
+
+4. Add a shell script step in your workflow before the rollout step , name it Inject Harness Plugin , add the contents of 
 
 # Troubleshooting
