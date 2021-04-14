@@ -60,10 +60,7 @@ Directory with the following path /root/K_PLUGINS/kustomize/plugin/version1/harn
    
 3. Add the plugin config yaml to the root of your kustomize repo HarnessKustomizePlugin.yaml
 
-4. Reference it in your kustomization.yaml (see example in this repo)
-
-transformers:
-- HarnessKustomizePlugin.yaml
+4. Reference it in your kustomization.yaml (see kustomization.yaml example in this repo)
    
 5. Configure the plugin directory as per documentation and delegate path above
    https://docs.harness.io/article/zrz7nstjha-use-kustomize-for-kubernetes-deployments
