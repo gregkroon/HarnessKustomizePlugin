@@ -61,6 +61,8 @@ Directory with the following path /root/K_PLUGINS/kustomize/plugin/version1/harn
 3. Configure the plugin directory as per documentation and delegate path above
    https://docs.harness.io/article/zrz7nstjha-use-kustomize-for-kubernetes-deployments
 
-4. Add a shell script step in your workflow before the rollout step , name it Inject Harness Plugin , add the contents of 
+4. Add a shell script step in your workflow before the rollout step , name it Inject Harness Plugin , add the contents of HarnessKustomizePluginScript-GIT-HTTPS-AUTH or HarnessKustomizePluginScript-GIT-SSH-AUTH depending on your auth scheme .
+
+5. If SSH you will require your ssh key added and tested manually to the delegate , if using HTTPS you will need to create a secret with the GIT user password called 
 
 # Troubleshooting
