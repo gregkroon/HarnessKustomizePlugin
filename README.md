@@ -67,6 +67,26 @@ Directory with the following path /root/K_PLUGINS/kustomize/plugin/version1/harn
      
 6. Add a shell script step in your workflow before the rollout step , name it Inject Harness Plugin , add the contents of HarnessKustomizePluginScript-GIT-HTTPS-AUTH or HarnessKustomizePluginScript-GIT-SSH-AUTH depending on your auth scheme .
 
+Shell Script variable values required :
+
+SSH Script
+
+GIT_USER="joebloggs" 
+GIT_EMAIL="joebloggs@hotmail.com"
+GIT_BRANCH="main"
+#reference to harness image artifact variable
+IMAGE=${artifact.metadata.image}
+#repo URL suffix 
+GIT_REPOSITORY_NAME=HarnessKustomizePlugin
+#generic repo path and auth 
+GIT_REPO_PATH=git@github.com:$GIT_USER/$GIT_REPOSITORY_NAME.git
+
+HTTPS Script
+
+
+
+TOODO: If your deployment.yaml and kustomize.yaml are in different paths from the root of the repo yoou will need to adjust the script , future versions will accomodate this .
+
 7. If SSH you will require your ssh key added and tested manually to the delegate , if using HTTPS you will need to create a secret with the GIT user password that is url encoded called "git_password_url_encoded"
 
 8. Execute the workflow and verify no errors in the "Rollout Deployment step" -> "Intialize logs" and that there is a successfull git commit on the deployment.yaml
