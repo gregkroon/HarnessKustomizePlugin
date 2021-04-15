@@ -69,9 +69,9 @@ Directory with the following path /root/K_PLUGINS/kustomize/plugin/version1/harn
 
 Shell Script variable values required :
 
-SSH Script
+```SSH Script
 
-```GIT_USER="joebloggs" 
+GIT_USER="joebloggs" 
 GIT_EMAIL="joebloggs@hotmail.com"
 GIT_BRANCH="main"
 #reference to harness image artifact variable
@@ -79,11 +79,11 @@ IMAGE=${artifact.metadata.image}
 #repo URL suffix 
 GIT_REPOSITORY_NAME=HarnessKustomizePlugin
 #generic repo path and auth 
-GIT_REPO_PATH=git@github.com:$GIT_USER/$GIT_REPOSITORY_NAME.git```
+GIT_REPO_PATH=git@github.com:$GIT_USER/$GIT_REPOSITORY_NAME.git
 
 HTTPS Script
 
-```GIT_USER="joebloggs"
+GIT_USER="joebloggs"
 GIT_EMAIL="joebloggs@hotmail.com"
 #note HTTPS url requires URL encoding for special characters 
 GIT_PASSWORD_URLENCODED=${secrets.getValue("git_password_url_encoded")}
