@@ -71,7 +71,7 @@ Shell Script variable values required :
 
 SSH Script
 
-'''GIT_USER="joebloggs" 
+```GIT_USER="joebloggs" 
 GIT_EMAIL="joebloggs@hotmail.com"
 GIT_BRANCH="main"
 #reference to harness image artifact variable
@@ -79,11 +79,11 @@ IMAGE=${artifact.metadata.image}
 #repo URL suffix 
 GIT_REPOSITORY_NAME=HarnessKustomizePlugin
 #generic repo path and auth 
-GIT_REPO_PATH=git@github.com:$GIT_USER/$GIT_REPOSITORY_NAME.git'''
+GIT_REPO_PATH=git@github.com:$GIT_USER/$GIT_REPOSITORY_NAME.git```
 
 HTTPS Script
 
-'''GIT_USER="joebloggs"
+```GIT_USER="joebloggs"
 GIT_EMAIL="joebloggs@hotmail.com"
 #note HTTPS url requires URL encoding for special characters 
 GIT_PASSWORD_URLENCODED=${secrets.getValue("git_password_url_encoded")}
@@ -95,7 +95,7 @@ REPOSITORY_NAME=HarnessKustomizePlugin
 #generic repo path
 REPO_PATH=https://github.com/gregkroon/HarnessKustomizePlugin
 #build full auth string with URL encoded password for remote repo add and git push 
-REPO_AUTH_STRING=https://$GIT_USER:$GIT_PASSWORD_URLENCODED@github.com/$GIT_USER/$REPOSITORY_NAME.git '''
+REPO_AUTH_STRING=https://$GIT_USER:$GIT_PASSWORD_URLENCODED@github.com/$GIT_USER/$REPOSITORY_NAME.git```
 
 
 TOODO: If your deployment.yaml and kustomize.yaml are in different paths from the root of the repo yoou will need to adjust the script , future versions will accomodate this .
