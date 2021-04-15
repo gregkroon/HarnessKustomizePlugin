@@ -102,7 +102,7 @@ REPO_AUTH_STRING=https://$GIT_USER:$GIT_PASSWORD_URLENCODED@github.com/$GIT_USER
 
 TODO: If your deployment.yaml and kustomize.yaml are in different paths from the root of the repo you will need to adjust the script , future versions will accomodate this .
 
-7. If SSH you will require your ssh key added and tested manually to the delegate , if using HTTPS you will need to create a secret with the GIT user password that is url encoded called "git_password_url_encoded"
+7. If using SSH you will require your ssh key added and tested manually to the delegate , if using HTTPS you will need to create a secret with the GIT user password that is url encoded called "git_password_url_encoded"
 
 8. Execute the workflow and verify no errors in the "Rollout Deployment step" -> "Intialize logs" and that there is a successfull git commit on the deployment.yaml
 
