@@ -95,7 +95,8 @@ REPOSITORY_NAME=HarnessKustomizePlugin
 #generic repo path
 REPO_PATH=https://github.com/gregkroon/HarnessKustomizePlugin
 #build full auth string with URL encoded password for remote repo add and git push 
-REPO_AUTH_STRING=https://$GIT_USER:$GIT_PASSWORD_URLENCODED@github.com/$GIT_USER/$REPOSITORY_NAME.git```
+REPO_AUTH_STRING=https://$GIT_USER:$GIT_PASSWORD_URLENCODED@github.com/$GIT_USER/$REPOSITORY_NAME.git
+```
 
 
 TOODO: If your deployment.yaml and kustomize.yaml are in different paths from the root of the repo yoou will need to adjust the script , future versions will accomodate this .
