@@ -69,7 +69,8 @@ Directory with the following path /root/K_PLUGINS/kustomize/plugin/version1/harn
 
 Shell Script variable values required :
 
-```SSH Script
+```
+SSH Script
 
 GIT_USER="joebloggs" 
 GIT_EMAIL="joebloggs@hotmail.com"
