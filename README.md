@@ -34,6 +34,7 @@ NOTE : if you dont wish to use GIT you can just remove the script block marked a
 - HarnessKustomizePlugin.yaml (Plugin configuration)
 - HarnessKustomizePluginScript-GIT-HTTPS (HTTPS Plugin script for addition to your workflow)
 - HarnessKustomizePluginScript-GIT-SSH (SSH Plugin script for addition to your workflow)
+- HarnessKustomizePluginScript (Minimal plugin without commit and push back to git)
 
 
 # Harness configuration (Delegate)
