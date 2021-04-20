@@ -1,0 +1,33 @@
+#!/bin/sh
+#Variables section
+
+#reference to harness image artifact variable
+IMAGE=${artifact.metadata.image}
+
+if [[ ! -d "/root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin" ]];then
+mkdir -p /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin
+fi
+
+#cleanup old script 
+rm -f /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin/HarnessKustomizePlugin
+
+#generate plugin script
+cat <<EOF > /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin/HarnessKustomizePlugin
+#!/bin/sh
+
+# capture standard input to file for yq processing 
+cat -> input.yaml
+
+#Process input file and transform for plugin stdout , this uses a yq select so as to change only the deployment.yaml not the service.yaml
+
+yq eval '(select(.spec.template.spec.containers[].image) |.spec.template.spec.containers[].image = "$IMAGE")'  input.yaml 
+
+yq eval '(select(.kind == "Deployment") | del(.metadata.annotations."kustomize.config.k8s.io/id") | .spec.template.spec.containers[].image = "$IMAGE"' input.yaml > deployment.yaml.new
+
+rm deployment.yaml
+mv deployment.yaml.new deployment.yaml
+
+EOF
+
+#Set plugin scipt permissions 
+chmod +x /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin/HarnessKustomizePlugin
