@@ -53,12 +53,15 @@ yq eval '(select(.kind == "Deployment") | del(.metadata.annotations."kustomize.c
 
 rm deployment.yaml
 mv deployment.yaml.new deployment.yaml
+
+################################## GIT OPTIONAL YOU CAN REMOVE THIS BLOCK IF NOT USING GIT ##################################
 git pull $REPO_PATH $GIT_BRANCH > /dev/null 2>&1
 
 git add -f deployment.yaml > /dev/null 2>&1
 git commit -m "Harness Automated commit"  > /dev/null 2>&1
 git remote set-url origin $REPO_AUTH_STRING > /dev/null 2>&1
 git push origin HEAD:$GIT_BRANCH > /dev/null 2>&1
+################################## GIT OPTIONAL YOU CAN REMOVE THIS BLOCK IF NOT USING GIT ##################################
 
 EOF
 
