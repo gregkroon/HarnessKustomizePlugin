@@ -17,11 +17,7 @@ mkdir -p /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin
 fi
 
 #cleanup old script 
-
-cd /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin
-rm  HarnessKustomizePlugin
-
-
+rm -f /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin/HarnessKustomizePlugin
 
 #generate plugin script
 cat <<EOF >  HarnessKustomizePlugin
