@@ -45,7 +45,7 @@ Directory with the following path /root/K_PLUGINS/kustomize/plugin/version1/harn
 # Harness configuration (Service)
 
 
-![image](https://user-images.githubusercontent.com/44827446/115651081-d679c780-a36d-11eb-9b46-4843ef47a50f.png)
+![image](https://user-images.githubusercontent.com/44827446/115798315-501abf80-a419-11eb-9c30-1a9c5a4a1798.png)
 
 
 # Harness configuration (Workflow)
