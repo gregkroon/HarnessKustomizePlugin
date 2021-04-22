@@ -12,12 +12,12 @@ GIT_REPOSITORY_NAME=HarnessKustomizePlugin
 GIT_REPO_PATH=git@github.com:$GIT_USER/$GIT_REPOSITORY_NAME.git
 
 
-if [[ ! -d "/root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin" ]];then
-mkdir -p /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin
+if [[ ! -d "/root/K_PLUGINS/${env.name}/kustomize/plugin/version1/harnesskustomizeplugin" ]];then
+mkdir -p /root/K_PLUGINS/${env.name}/kustomize/plugin/version1/harnesskustomizeplugin
 fi
 
 #cleanup old script 
-rm -f /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin/HarnessKustomizePlugin
+rm -f /root/K_PLUGINS/${env.name}/kustomize/plugin/version1/harnesskustomizeplugin/HarnessKustomizePlugin
 
 #generate plugin script
 cat <<EOF >  HarnessKustomizePlugin
