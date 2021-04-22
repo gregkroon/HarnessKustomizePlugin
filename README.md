@@ -52,7 +52,8 @@ Directory with the following path /root/K_PLUGINS/kustomize/plugin/version1/harn
 
 ![image](https://user-images.githubusercontent.com/44827446/114340868-d7577000-9b9b-11eb-93ad-7e115e2932f2.png)
 
-![image](https://user-images.githubusercontent.com/44827446/114344651-8fd4e200-9ba3-11eb-9e52-6125785c223f.png)
+![image](https://user-images.githubusercontent.com/44827446/115651177-05903900-a36e-11eb-80e7-7678eedbaae7.png)
+
 
 # How to implement 
 
