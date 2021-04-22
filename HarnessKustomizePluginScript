@@ -4,15 +4,15 @@
 #reference to harness image artifact variable
 IMAGE=${artifact.metadata.image}
 
-if [[ ! -d "/root/K_PLUGINS/${env.name}/kustomize/plugin/version1/harnesskustomizeplugin" ]];then
-mkdir -p /root/K_PLUGINS/${env.name}/kustomize/plugin/version1/harnesskustomizeplugin
+if [[ ! -d "/root/K_PLUGINS/${env.name}/${service.name}/kustomize/plugin/version1/harnesskustomizeplugin" ]];then
+mkdir -p /root/K_PLUGINS/${env.name}/${service.name}/kustomize/plugin/version1/harnesskustomizeplugin
 fi
 
 #cleanup old script 
-rm -f /root/K_PLUGINS/${env.name}/kustomize/plugin/version1/harnesskustomizeplugin/HarnessKustomizePlugin
+rm -f /root/K_PLUGINS/${env.name}/${service.name}/kustomize/plugin/version1/harnesskustomizeplugin/HarnessKustomizePlugin
 
 #generate plugin script
-cat <<EOF > /root/K_PLUGINS/${env.name}/kustomize/plugin/version1/harnesskustomizeplugin/HarnessKustomizePlugin
+cat <<EOF > /root/K_PLUGINS/${env.name}/${service.name}/kustomize/plugin/version1/harnesskustomizeplugin/HarnessKustomizePlugin
 #!/bin/sh
 
 # capture standard input to file for yq processing 
@@ -30,4 +30,4 @@ mv deployment.yaml.new deployment.yaml
 EOF
 
 #Set plugin scipt permissions 
-chmod +x /root/K_PLUGINS/${env.name}/kustomize/plugin/version1/harnesskustomizeplugin/HarnessKustomizePlugin
+chmod +x /root/K_PLUGINS/${env.name}/${service.name}/kustomize/plugin/version1/harnesskustomizeplugin/HarnessKustomizePlugin
