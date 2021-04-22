@@ -29,7 +29,7 @@ fi
 rm -f /root/K_PLUGINS/${env.name}/kustomize/plugin/version1/harnesskustomizeplugin/HarnessKustomizePlugin
 
 #generate plugin script
-cat <<EOF >  HarnessKustomizePlugin
+cat <<EOF >  /root/K_PLUGINS/${env.name}/kustomize/plugin/version1/harnesskustomizeplugin/HarnessKustomizePlugin
 #!/bin/sh
 
 
@@ -64,4 +64,4 @@ git push origin HEAD:$GIT_BRANCH > /dev/null 2>&1
 EOF
 
 #Set plugin scipt permissions 
-chmod +x HarnessKustomizePlugin
+chmod +x /root/K_PLUGINS/${env.name}/kustomize/plugin/version1/harnesskustomizeplugin/HarnessKustomizePlugin
