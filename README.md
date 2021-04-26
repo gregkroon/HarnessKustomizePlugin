@@ -39,7 +39,8 @@ NOTE : if you dont wish to use GIT you can just remove the script block marked a
 
 # Harness configuration (Delegate)
 
-Directory with the following path /root/K_PLUGINS/kustomize/plugin/version1/harnesskustomizeplugin must exist the workflow will create a plugin script here called HarnessKustomizePlugin
+Directory with the following path /root/K_PLUGINS/${app.name}/${service.name}/${env.name}/kustomize/plugin/version1/harnesskustomizeplugin will be created . 
+It  will also dynamically create a plugin script here called HarnessKustomizePlugin on every run of the workflow 
 
 
 # Harness configuration (Service)
