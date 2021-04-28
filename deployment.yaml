@@ -16,5 +16,5 @@ spec:
         app: hello
     spec:
       containers:
-        - image: registry.hub.docker.com/library/nginx:perl
+        - image: registry.hub.docker.com/library/nginx:stable-alpine
           name: nginx
